@@ -1,0 +1,42 @@
+[debug] [2024-04-03T04:12:01.105Z] ----------------------------------------------------------------------
+[debug] [2024-04-03T04:12:01.118Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\EMMANUEL A\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-04-03T04:12:01.120Z] CLI Version:   13.4.0
+[debug] [2024-04-03T04:12:01.121Z] Platform:      win32
+[debug] [2024-04-03T04:12:01.123Z] Node Version:  v20.11.1
+[debug] [2024-04-03T04:12:01.124Z] Time:          Wed Apr 03 2024 05:12:01 GMT+0100 (West Africa Standard Time)
+[debug] [2024-04-03T04:12:01.124Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-03T04:12:01.662Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-03T04:12:01.664Z] > authorizing via signed-in user (joelodufu@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\OFUKIDOMA FILES\OFUKIDOMA MM\ofukidomaAdmin
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-04-03T04:12:10.725Z] Using project from CLI flag: ofukidomamembers
+[debug] [2024-04-03T04:12:10.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ofukidomamembers [none]
+[debug] [2024-04-03T04:12:32.312Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/ofukidomamembers, {"headers":{},"method":"GET","signal":{}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/ofukidomamembers failed, reason: 
+[debug] [2024-04-03T04:12:32.312Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/ofukidomamembers (original: request to https://firebase.googleapis.com/v1beta1/projects/ofukidomamembers failed, reason: )
+[debug] [2024-04-03T04:12:37.333Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\EMMANUEL A\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:258:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.
