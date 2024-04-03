@@ -1,0 +1,128 @@
+.nav-link {
+  margin: 3px;
+  padding: 0.5rem;
+  border-right: 1px solid black;
+}
+
+.nav-line {
+  width: 2px;
+  height: 1rem;
+  background-color: #000;
+  margin: 0 1rem;
+}
+
+.c-card {
+  height: 100%;
+}
+
+.c-image {
+  height: 193px;
+}
+
+.open {
+  left: -150px !important;
+}
+
+.cap-btn {
+  border: 1px solid#d42020;
+  color:#d42020;
+}
+
+.cap-amt {
+  color: #4d5562;
+}
+
+.progress-camp {
+  background-color:#d42020;
+}
+
+.top-search {
+  width: 493.75px;
+}
+
+.active {
+  background-color:#d42020;
+  color: white !important;
+}
+
+.nLink {
+  color: #4d5562;
+  font-weight: bold;
+}
+
+.nav-bg:hover {
+  border: 1px solid#d42020;
+  background-color: white;
+  color:#d42020 !important;
+  font-weight: bold;
+}
+
+.log-btn{
+  border: 1px solid#d42020;
+  background-color: white;
+  color:#d42020 !important;
+  font-weight: bold;
+}
+
+.nav-bg {
+  color: #4d5562;
+  font-weight: bold;
+  /* color: white; */
+}
+
+.nav-active {
+  color: white;
+}
+
+.text-mid {
+  color: #4d5562;
+}
+
+.amm {
+  font-size: 16px;
+  color: #4d5562;
+  font-weight: bold;
+}
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .scroll-up {
+    animation: scrollUp 5s linear infinite;
+  }
+}
+
+/* For desktop views (min-width: 768px) */
+@media (min-width: 768px) {
+  .donators-list {
+    height: 100%;
+  }
+}
+
+/* For mobile views (max-width: 767px) */
+@media (max-width: 767px) {
+  .donators-list {
+    height: 10vh;
+    padding-bottom: 10px;
+  }
+}
+
+
+.my-svg {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+.my-svg:hover {
+  filter: none; /* Remove filter on hover */
+}
+
+.my-svg:active {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(175deg); /* Reapply filter on active (clicked) */
+}
+

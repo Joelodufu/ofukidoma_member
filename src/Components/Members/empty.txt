@@ -1,0 +1,262 @@
+<div className='bg-white p-4 rounded-xl shadow-md md:w-1/4 md:mr-4 mb-4 h-full'>
+            <h2 className='text-xl font-bold mb-4'>Make Donation</h2>
+            <form onSubmit={handleDonateModal}>
+              <label
+                className='block mb-2 font-bold text-gray-700'
+                htmlFor='amount'
+              >
+                Enter Amount
+              </label>
+              <input
+                type='text'
+                id='amount'
+                className={`w-full px-3 py-2 border ${
+                  handleAmountSelection ? 'bg-gray-200' : 'border-gray-300'
+                } rounded focus:outline-none focus:ring focus:ring-blue-400`}
+                name='amount'
+                placeholder='N0'
+                value={selectedAmount}
+                onChange={(e) => setSelectedAmount(e.target.value)}
+              />
+            </form>
+            <br />
+            <div className='flex flex-col'>
+              <div className='flex flex-wrap mx-auto text-center'>
+                <div className='flex flex-row'>
+                  <button
+                    className={`${
+                      selectedAmount === 1000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(1000)}
+                  >
+                    1000
+                  </button>
+                  <button
+                    className={`${
+                      selectedAmount === 2000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(2000)}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className={`${
+                      selectedAmount === 3000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(3000)}
+                  >
+                    3000
+                  </button>
+                </div>
+              </div>
+              <div className='flex flex-wrap mx-auto text-center'>
+                <div className='flex flex-row'>
+                  <button
+                    className={`${
+                      selectedAmount === 4000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(4000)}
+                  >
+                    4000
+                  </button>
+                  <button
+                    className={`${
+                      selectedAmount === 5000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(5000)}
+                  >
+                    5000
+                  </button>
+                  <button
+                    className={`${
+                      selectedAmount === 6000
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleAmountSelection(6000)}
+                  >
+                    6000
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className='text-justify'>
+              <h1 className='font-bold mb-3 text-center'>Recurring Donation</h1>
+              <p>
+                Let's help you ease the process of coming back to make committees
+                again by making your default amount reoccur at your set
+                frequency.
+              </p>
+            </div>
+
+            <div className='flex items-center mt-2'>
+              <span className='mr-2 font-bold'>Make Recurring</span>
+              <button
+                className={`relative focus:outline-none w-10 h-4 transition-colors duration-300 ${
+                  isRecurring ? 'bg-gray-200' : 'bg-red-500'
+                } rounded-full`}
+                onClick={handleToggle}
+              >
+                <span
+                  className={`absolute inset-0 w-4 h-4 transition-transform duration-300 ${
+                    isRecurring ? 'translate-x-0' : 'translate-x-6'
+                  } bg-white rounded-full shadow-md`}
+                />
+              </button>
+            </div>
+            <div className='flex flex-col mt-2 items-center'>
+              <div className='relative inline-block w-full text-left'>
+                <div>
+                  {' '}
+                  <button
+                    className={`${
+                      selectedFrequency === 'daily'
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleFrequencyChange('daily')}
+                    disabled={isRecurring}
+                  >
+                    Daily
+                  </button>
+                  <button
+                    className={`${
+                      selectedFrequency === 'weekly'
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleFrequencyChange('weekly')}
+                    disabled={isRecurring}
+                  >
+                    weekly
+                  </button>
+                  <button
+                    className={`${
+                      selectedFrequency === 'monthly'
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleFrequencyChange('monthly')}
+                    disabled={isRecurring}
+                  >
+                    monthly
+                  </button>
+                  <button
+                    className={`${
+                      selectedFrequency === 'hourly'
+                        ? 'main-bg text-white'
+                        : 'bg-gray-100'
+                    } px-2 py-1 rounded-lg m-2 w-full sm:w-auto`}
+                    onClick={() => handleFrequencyChange('hourly')}
+                    disabled={isRecurring}
+                  >
+                    hourly
+                  </button>
+                </div>
+
+                {/* Use 'w-full' class to make it full width on mobile */}
+                { authCtx.userInfo.userType === 'Admin'
+                  ? null :
+                <div>
+                  <input
+                    type='checkbox'
+                    id='donateAsAnonymous'
+                    name='donationType'
+                    value='anonymous'
+                    checked={isAnonymousDonor}
+                    onChange={() => setIsAnonymousDonor(!isAnonymousDonor)}
+                  />
+                  <label htmlFor='donateAsAnonymous' className='ml-2'>
+                    Donate as Anonymous
+                  </label>
+                </div>
+                }
+                <div className='absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none'>
+                  <svg
+                    className='w-4 h-4 text-gray-400'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path fillRule='evenodd' d='M10 12l-6-6h12l-6 6z' />
+                  </svg>
+                </div>
+              </div>
+
+              {memberData?.data?.status === 'Pending' && (
+                <p className='bg-red-300 p-2 rounded mt-2 flex items-center text-sm'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    className='feather feather-info mr-2'
+                    width='20'
+                    height='20'
+                  >
+                    <circle cx='12' cy='12' r='10'></circle>
+                    <line x1='12' y1='16' x2='12' y2='12'></line>
+                    <line x1='12' y1='8' x2='12.01' y2='8'></line>
+                  </svg>
+                  You can't donate to a pending member
+                </p>
+              )}
+              {authCtx.userInfo.userType === 'Admin'
+                ? null
+                : memberData?.data?.status === 'Approved' && (
+                    <div className='w-full'>
+                      <button
+                        type='button'
+                        className={`mt-4 px-6 w-full py-2 text-white main-bg rounded-md focus:outline-none focus:ring focus:ring-blue-400`}
+                        onClick={handleDonateModal}
+                      >
+                        Donate
+                      </button>
+                      <RWebShare
+                        data={{
+                          text: memberData?.data?.description,
+                          url: window.location.href,
+                          title: memberData?.data?.title,
+                        }}
+                        onClick={() => console.log('shared successfully!')}
+                      >
+                        <button
+                          className={`mt-4 px-6 w-full py-2 btn btn-custom rounded-md focus:outline-none focus:ring focus:ring-blue-400`}
+                        >
+                          Share
+                        </button>
+                      </RWebShare>
+
+                      <p className='text-center mt-1'>
+                        {AllDonation?.length} people have made committees to this
+                        member
+                      </p>
+                    </div>
+                  )}
+              {memberData?.data?.status === 'Draft' && (
+                <div className='w-full'>
+                  <Link to={`/edit?id=${memberData?.data?._id}`}>
+                    <button
+                      className={`mt-4 px-6 w-full py-2 text-white main-bg rounded-md focus:outline-none focus:ring focus:ring-blue-400`}
+                    >
+                      Continue
+                    </button>
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
