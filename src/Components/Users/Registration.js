@@ -301,7 +301,7 @@ const SignUp = () => {
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                   />
-                  <Link to="/terms-conditions"> <p htmlFor="rememberMe" className="ml-2 rem">
+                  <Link to="#"> <p htmlFor="rememberMe" className="ml-2 rem">
                     i agree to <span className="top-bk">Terms & Condition</span>
                   </p></Link>
                 </div>
